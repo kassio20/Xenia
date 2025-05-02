@@ -76,63 +76,68 @@ export default function Hero() {
       <header
         className={`fixed w-full z-50 transition-all duration-300 ${
           isScrolled
-            ? "bg-gray-900/90 text-white shadow-md py-4 backdrop-blur-sm"  // Changed to dark theme
+            ? "bg-gray-900/90 text-white shadow-md py-4 backdrop-blur-sm"
             : "bg-transparent text-white py-8"
         }`}
       >
-        <div className="container-custom flex justify-between items-center">
-          {/* Logo */}
-          <div className="relative z-10 flex w-full justify-center md:justify-start">
-            <div className={`
-              relative ${isScrolled ? "bg-gray-800/50" : "bg-white/10"} backdrop-blur-sm rounded-lg p-2 sm:p-4
-              ${isScrolled 
-                ? "w-[80%] sm:w-64 md:w-80 h-auto aspect-video sm:h-45" 
-                : "w-[80%] sm:w-80 md:w-96 h-auto aspect-video sm:h-54"
-              }
-              flex items-center justify-center
-              transition-all duration-300
-              mx-auto md:mx-0
-            `}>
-              <Image
-                src="/logo-estruturar.png"
-                alt="Imóveis Estruturar"
-                width={isScrolled ? 180 : 220}
-                height={isScrolled ? 180 : 220}
-                className="object-contain max-h-full max-w-[80%] sm:max-w-full"
-                priority
-              />
+        <div className="container-custom">
+          {/* Desktop layout - Logo and navigation */}
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between">
+            {/* Logo - Now full width on mobile, aligned left on desktop */}
+            <div className="w-full flex justify-center md:justify-start md:w-auto">
+              <div className={`
+                relative ${isScrolled ? "bg-gray-800/50" : "bg-white/10"} backdrop-blur-sm rounded-lg p-2 sm:p-4
+                ${isScrolled 
+                  ? "w-[80%] sm:w-64 md:w-auto h-auto aspect-video sm:h-auto" 
+                  : "w-[80%] sm:w-80 md:w-auto h-auto aspect-video sm:h-auto"
+                }
+                flex items-center justify-center
+                transition-all duration-300
+                mx-auto md:mx-0
+              `}>
+                <Image
+                  src="/logo-estruturar.png"
+                  alt="Imóveis Estruturar"
+                  width={isScrolled ? 180 : 220}
+                  height={isScrolled ? 180 : 220}
+                  className="object-contain max-h-full max-w-[80%] sm:max-w-full"
+                  priority
+                />
+              </div>
             </div>
-          </div>
 
-          {/* Desktop navigation */}
-          <nav className="hidden md:flex gap-8">
-            {navLinks.map((link) => (
-              <Link 
-                key={link.name} 
-                href={link.href}
-                className="nav-link text-white hover:text-[#f7b70f] transition-colors"
+            {/* Navigation and contact - Now in a separate div for proper alignment */}
+            <div className="hidden md:flex md:items-center md:space-x-6 mt-4 md:mt-0">
+              {/* Desktop navigation */}
+              <nav className="flex gap-6 items-center">
+                {navLinks.map((link) => (
+                  <Link 
+                    key={link.name} 
+                    href={link.href}
+                    className="nav-link text-white hover:text-[#f7b70f] transition-colors whitespace-nowrap"
+                  >
+                    {link.name}
+                  </Link>
+                ))}
+              </nav>
+
+              {/* Contact button */}
+              <a
+                href={`tel:${CONTACT_INFO.phoneLink}`}
+                className="flex items-center gap-2 text-white font-medium hover:text-[#f7b70f] transition-colors whitespace-nowrap"
               >
-                {link.name}
-              </Link>
-            ))}
-          </nav>
+                <Phone size={18} /> {CONTACT_INFO.phoneFormatted}
+              </a>
+            </div>
 
-          {/* Contact button */}
-          <a
-            href={`tel:${CONTACT_INFO.phoneLink}`}
-            className="hidden md:flex items-center gap-2 text-white font-medium hover:text-[#f7b70f] transition-colors"
-          >
-            <Phone size={18} /> {CONTACT_INFO.phoneFormatted}
-          </a>
-
-          {/* Mobile menu button */}
-          <button
-            className="md:hidden text-2xl"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
-            {isMenuOpen ? <X className="text-white" /> : <Menu className="text-white" />}
-          </button>
-        </div>
+            {/* Mobile menu button - Stays at the top right */}
+            <button
+              className="md:hidden absolute top-4 right-4 text-2xl z-50"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+            >
+              {isMenuOpen ? <X className="text-white" /> : <Menu className="text-white" />}
+            </button>
+          </div>
 
         {/* Mobile menu */}
         {isMenuOpen && (
