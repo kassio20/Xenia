@@ -17,3 +17,4 @@ export const CONTACT_INFO = {
   }
 };
 
+// Version bump
