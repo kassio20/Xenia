@@ -93,7 +93,7 @@ export default function ContactForm() {
                   <div>
                     <p className="font-medium text-sm sm:text-base">Instagram</p>
                     <a 
-                      href={CONTACT_INFO.socialMedia?.instagram || "#"}
+                      href={CONTACT_INFO.instagram}
                       target="_blank" 
                       rel="noopener noreferrer" 
                       className="text-white hover:underline text-sm sm:text-base"
