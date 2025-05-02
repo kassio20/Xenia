@@ -82,15 +82,16 @@ export default function Hero() {
       >
         <div className="container-custom flex justify-between items-center">
           {/* Logo */}
-          <div className="relative z-10">
+          <div className="relative z-10 flex w-full justify-center md:justify-start">
             <div className={`
               relative ${isScrolled ? "bg-gray-800/50" : "bg-white/10"} backdrop-blur-sm rounded-lg p-2 sm:p-4
               ${isScrolled 
-                ? "w-full sm:w-64 md:w-80 h-auto aspect-video sm:h-45" 
-                : "w-full sm:w-80 md:w-96 h-auto aspect-video sm:h-54"
+                ? "w-[80%] sm:w-64 md:w-80 h-auto aspect-video sm:h-45" 
+                : "w-[80%] sm:w-80 md:w-96 h-auto aspect-video sm:h-54"
               }
               flex items-center justify-center
               transition-all duration-300
+              mx-auto md:mx-0
             `}>
               <Image
                 src="/logo-estruturar.png"
