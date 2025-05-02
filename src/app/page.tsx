@@ -51,106 +51,115 @@ export default function Home() {
       <ContactForm />
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12">
-        <div className="container-custom">
+      <footer className="bg-gray-900 text-white">
+        <div className="container-custom px-4 py-8 sm:py-12">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Logo and Contact */}
-            <div>
-              <img
-                src="/logo-estruturar.png"
-                alt="Imóveis Estruturar"
-                className="h-16 w-auto mb-4"
-              />
-              <p className="text-gray-400 mb-4">
-                Sua parceira para os melhores investimentos em Prado, Bahia.
+            {/* Company info */}
+            <div className="space-y-4">
+              <div className="flex items-center justify-center md:justify-start">
+                <img
+                  src="/logo-estruturar.png"
+                  alt="Imóveis Estruturar"
+                  className="h-16 w-auto object-contain"
+                />
+              </div>
+              <p className="text-gray-400 text-sm sm:text-base text-center md:text-left">
+                Sua parceira para investimentos seguros em Prado. Oferecemos terrenos e casas com a melhor qualidade e localização.
               </p>
-              <div className="space-y-2">
-                <a
-                  href="tel:+5573999147925"
-                  className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors"
+              <div className="flex justify-center md:justify-start space-x-4">
+                <a 
+                  href="https://www.instagram.com/imoveisestruturar" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-white hover:text-[#f7b70f] transition-colors bg-pink-600 hover:bg-pink-700 p-2 rounded-full"
+                  aria-label="Instagram"
                 >
-                  <Phone size={18} /> (73) 99914-7925
+                  <Instagram size={20} />
                 </a>
-                <a
+                <a 
+                  href="https://wa.me/5573999147925" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-white hover:text-[#f7b70f] transition-colors bg-green-600 hover:bg-green-700 p-2 rounded-full"
+                  aria-label="WhatsApp"
+                >
+                  <Phone size={20} />
+                </a>
+                <a 
                   href="mailto:contato@imoveisestruturar.com.br"
-                  className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors"
+                  className="text-white hover:text-[#f7b70f] transition-colors bg-blue-600 hover:bg-blue-700 p-2 rounded-full"
+                  aria-label="Email"
                 >
-                  <Mail size={18} /> contato@imoveisestruturar.com.br
+                  <Mail size={20} />
                 </a>
-                <p className="flex items-center gap-2 text-gray-300">
-                  <MapPin size={18} /> Prado, Bahia - Brasil
-                </p>
               </div>
             </div>
 
-            {/* Links */}
+            {/* Quick links */}
             <div>
-              <h3 className="text-lg font-bold mb-4">Links Rápidos</h3>
-              <ul className="space-y-2">
+              <h3 className="text-lg font-semibold mb-4 text-center md:text-left">Links Rápidos</h3>
+              <ul className="space-y-2 text-sm sm:text-base text-center md:text-left">
                 <li>
-                  <a href="#" className="text-gray-300 hover:text-white transition-colors">
+                  <a href="#" className="text-gray-400 hover:text-white transition-colors">
                     Início
                   </a>
                 </li>
                 <li>
-                  <a href="#empreendimento" className="text-gray-300 hover:text-white transition-colors">
+                  <a href="#empreendimento" className="text-gray-400 hover:text-white transition-colors">
                     O Empreendimento
                   </a>
                 </li>
                 <li>
-                  <a href="#galeria" className="text-gray-300 hover:text-white transition-colors">
+                  <a href="#galeria" className="text-gray-400 hover:text-white transition-colors">
                     Galeria
                   </a>
                 </li>
                 <li>
-                  <a href="#localizacao" className="text-gray-300 hover:text-white transition-colors">
+                  <a href="#localizacao" className="text-gray-400 hover:text-white transition-colors">
                     Localização
                   </a>
                 </li>
                 <li>
-                  <a href="#contato" className="text-gray-300 hover:text-white transition-colors">
+                  <a href="#contato" className="text-gray-400 hover:text-white transition-colors">
                     Contato
                   </a>
                 </li>
               </ul>
             </div>
 
-            {/* Social */}
+            {/* Contact info */}
             <div>
-              <h3 className="text-lg font-bold mb-4">Redes Sociais</h3>
-              <div className="flex gap-4">
-                <a
-                  href="https://www.instagram.com/imoveisestruturar"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-pink-600 hover:bg-pink-700 text-white p-3 rounded-full transition-colors"
-                >
-                  <Instagram size={20} />
-                </a>
-                <a
-                  href="https://wa.me/5573999147925"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-green-600 hover:bg-green-700 text-white p-3 rounded-full transition-colors"
-                >
-                  <Phone size={20} />
-                </a>
-              </div>
-              <p className="mt-6 text-gray-400 text-sm">
-                Horário de Atendimento:<br />
-                Segunda a Sexta: 8h às 18h<br />
-                Sábado: 8h às 12h
-              </p>
+              <h3 className="text-lg font-semibold mb-4 text-center md:text-left">Contato</h3>
+              <ul className="space-y-2 text-sm sm:text-base text-center md:text-left">
+                <li className="flex items-center justify-center md:justify-start gap-2">
+                  <Phone size={16} className="text-[#0f8a7d]" />
+                  <a href="tel:+5573999147925" className="text-gray-400 hover:text-white transition-colors">
+                    (73) 99914-7925
+                  </a>
+                </li>
+                <li className="flex items-center justify-center md:justify-start gap-2">
+                  <Mail size={16} className="text-[#0f8a7d]" />
+                  <a href="mailto:contato@imoveisestruturar.com.br" className="text-gray-400 hover:text-white transition-colors">
+                    contato@imoveisestruturar.com.br
+                  </a>
+                </li>
+                <li className="flex items-center justify-center md:justify-start gap-2">
+                  <MapPin size={16} className="text-[#0f8a7d]" />
+                  <span className="text-gray-400">Prado, Bahia - Brasil</span>
+                </li>
+                <li className="flex items-center justify-center md:justify-start gap-2">
+                  <span className="text-gray-400">Seg-Sex: 8h às 18h</span>
+                </li>
+                <li className="flex items-center justify-center md:justify-start gap-2 pl-0 md:pl-6">
+                  <span className="text-gray-400">Sáb: 8h às 12h</span>
+                </li>
+              </ul>
             </div>
           </div>
 
-          <div className="mt-12 pt-8 border-t border-gray-800 text-center text-gray-400 text-sm">
-            <p>
-              © {new Date().getFullYear()} Imóveis Estruturar. Todos os direitos reservados.
-            </p>
-            <p className="mt-2">
-              Desenvolvido por KMM Soluções em Tecnologia
-            </p>
+          <div className="mt-8 pt-6 border-t border-gray-800 text-center">
+            <p className="text-sm text-gray-400">© {new Date().getFullYear()} Imóveis Estruturar. Todos os direitos reservados.</p>
+            <p className="text-xs sm:text-sm text-gray-500 mt-2">Desenvolvido por KMM Soluções em Tecnologia</p>
           </div>
         </div>
       </footer>

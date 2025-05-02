@@ -7,12 +7,18 @@
   --primary-dark: #086b60;
   --secondary: #f7b70f;
   --secondary-dark: #e5a90e;
-  --background: #ffffff;
-  --foreground: #333333;
+  --background: #0f172a; /* Dark background instead of white */
+  --foreground: #f1f5f9; /* Light text for dark background */
   --accent: #ff6347;
 }
 
-html {
+/* Fix the white stripe issue on mobile */
+html, body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  width: 100%;
+  margin: 0;
+  padding: 0;
   scroll-behavior: smooth;
 }
 
@@ -20,7 +26,6 @@ body {
   font-family: var(--font-inter), sans-serif;
   color: var(--foreground);
   background-color: var(--background);
-  overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -31,7 +36,32 @@ h1, h2, h3, h4, h5, h6 {
 /* Custom components */
 @layer components {
   .container-custom {
-    @apply container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl;
+    @apply w-full mx-auto px-4 sm:px-6 lg:px-8;
+    max-width: 100%;
+  }
+  
+  @media (min-width: 640px) {
+    .container-custom {
+      max-width: 640px;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .container-custom {
+      max-width: 768px;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .container-custom {
+      max-width: 1024px;
+    }
+  }
+  
+  @media (min-width: 1280px) {
+    .container-custom {
+      max-width: 1280px;
+    }
   }
   
   .btn-primary {
@@ -51,11 +81,11 @@ h1, h2, h3, h4, h5, h6 {
   }
   
   .section-subtitle {
-    @apply text-xl text-gray-600 mb-12 text-center max-w-3xl mx-auto;
+    @apply text-xl text-gray-300 mb-12 text-center max-w-3xl mx-auto;
   }
   
   .card {
-    @apply bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:-translate-y-1 hover:shadow-xl;
+    @apply bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:-translate-y-1 hover:shadow-xl;
   }
   
   /* Animations */
@@ -72,14 +102,35 @@ h1, h2, h3, h4, h5, h6 {
   
   /* Header and Navigation */
   .nav-link {
-    @apply text-gray-800 hover:text-[var(--primary)] font-medium transition-colors duration-300;
+    @apply text-gray-100 hover:text-[var(--primary)] font-medium transition-colors duration-300;
   }
   
   .floating-form {
-    @apply fixed top-1/2 right-5 -translate-y-1/2 bg-white z-50 shadow-2xl rounded-lg p-6 max-w-sm;
+    @apply fixed top-1/2 right-5 -translate-y-1/2 bg-gray-800 text-white z-50 shadow-2xl rounded-lg p-6 max-w-sm;
   }
   
   .hero-overlay {
     @apply absolute inset-0 bg-black bg-opacity-50;
   }
+}
+
+/* Ensure dark theme is properly applied */
+section {
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Fix specific sections with white backgrounds */
+.bg-white {
+  background-color: #1e293b !important; /* Dark background instead of white */
+  color: #f1f5f9 !important;
+}
+
+/* Fix text colors in previously white sections */
+.bg-white .text-gray-900 {
+  color: #f1f5f9 !important;
+}
+
+.bg-white .text-gray-600 {
+  color: #cbd5e1 !important;
 }

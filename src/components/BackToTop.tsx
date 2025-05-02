@@ -9,7 +9,7 @@ export default function BackToTop() {
 
   useEffect(() => {
     const toggleVisibility = () => {
-      if (window.pageYOffset > 500) {
+      if (window.pageYOffset > 300) {
         setIsVisible(true);
       } else {
         setIsVisible(false);
@@ -35,10 +35,10 @@ export default function BackToTop() {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 20 }}
           onClick={scrollToTop}
-          className="fixed bottom-6 left-6 z-40 bg-[var(--primary)] hover:bg-[var(--primary-dark)] text-white p-3 rounded-full shadow-lg transition-colors"
+          className="fixed bottom-4 left-4 sm:bottom-6 sm:left-6 z-40 bg-[#0f8a7d] hover:bg-[#086b60] text-white rounded-full p-2 sm:p-3 shadow-lg transition-colors"
           aria-label="Voltar ao topo"
         >
-          <ArrowUp size={24} />
+          <ArrowUp size={20} className="sm:w-5 sm:h-5" />
           <span className="sr-only">Voltar ao topo da página</span>
         </motion.button>
       )}

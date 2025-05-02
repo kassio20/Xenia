@@ -37,15 +37,39 @@ export default function Hero() {
     <div className="relative h-screen w-full overflow-hidden">
       {/* Full-screen background with image */}
       <div className="absolute inset-0 z-0">
-        <Image 
-          src="/images/praia1.jpeg"
-          alt="Praia em Prado, Bahia"
-          fill
-          style={{ objectFit: 'cover' }}
-          priority
-          quality={90}
-        />
-        <div className="absolute inset-0 bg-black/50"></div> {/* Overlay to ensure text is readable */}
+        {/* Mobile background image */}
+        <div className="block md:hidden">
+          <Image 
+            src="/images/praia1.jpeg"
+            alt="Praia em Prado, Bahia"
+            fill
+            quality={90}
+            priority
+            style={{ 
+              objectFit: 'cover', 
+              objectPosition: 'center 25%',  // Better positioning for mobile
+              transform: 'scale(1.1)'  // Slight zoom for better coverage
+            }}
+          />
+        </div>
+        
+        {/* Desktop background image */}
+        <div className="hidden md:block">
+          <Image 
+            src="/images/praia1.jpeg"
+            alt="Praia em Prado, Bahia"
+            fill
+            quality={95}
+            priority
+            style={{ 
+              objectFit: 'cover',
+              objectPosition: 'center center'
+            }}
+          />
+        </div>
+        
+        {/* Dark overlay with improved contrast */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/70"></div>
       </div>
 
       {/* Navigation */}
@@ -60,17 +84,20 @@ export default function Hero() {
           {/* Logo */}
           <div className="relative z-10">
             <div className={`
-              relative ${isScrolled ? "bg-gray-800/50" : "bg-white/10"} backdrop-blur-sm rounded-lg p-4
-              ${isScrolled ? "w-80 h-45" : "w-96 h-54"}  
+              relative ${isScrolled ? "bg-gray-800/50" : "bg-white/10"} backdrop-blur-sm rounded-lg p-2 sm:p-4
+              ${isScrolled 
+                ? "w-full sm:w-64 md:w-80 h-auto aspect-video sm:h-45" 
+                : "w-full sm:w-80 md:w-96 h-auto aspect-video sm:h-54"
+              }
               flex items-center justify-center
               transition-all duration-300
             `}>
               <Image
                 src="/logo-estruturar.png"
                 alt="Imóveis Estruturar"
-                width={isScrolled ? 200 : 250}
-                height={isScrolled ? 200 : 250}
-                className="object-contain max-h-full"
+                width={isScrolled ? 180 : 220}
+                height={isScrolled ? 180 : 220}
+                className="object-contain max-h-full max-w-[80%] sm:max-w-full"
                 priority
               />
             </div>
@@ -108,13 +135,13 @@ export default function Hero() {
 
         {/* Mobile menu */}
         {isMenuOpen && (
-          <div className="md:hidden absolute top-full left-0 right-0 bg-gray-900/90 backdrop-blur-sm shadow-md py-4">
+          <div className="md:hidden absolute top-full left-0 right-0 bg-gray-900/90 backdrop-blur-sm shadow-md py-4 z-50">
             <div className="container-custom flex flex-col gap-4">
               {navLinks.map((link) => (
                 <Link
                   key={link.name}
                   href={link.href}
-                  className="text-white hover:text-[#f7b70f] transition-colors"
+                  className="text-white hover:text-[#f7b70f] transition-colors py-2 border-b border-gray-800 last:border-b-0"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {link.name}
@@ -122,7 +149,7 @@ export default function Hero() {
               ))}
               <a
                 href={`tel:${CONTACT_INFO.phoneLink}`}
-                className="flex items-center gap-2 text-[#f7b70f] font-medium"
+                className="flex items-center gap-2 text-[#f7b70f] font-medium py-2 mt-2"
                 onClick={() => setIsMenuOpen(false)}
               >
                 <Phone size={18} /> {CONTACT_INFO.phoneFormatted}
@@ -133,23 +160,24 @@ export default function Hero() {
       </header>
 
       {/* Hero content */}
-      <div className="relative z-10 h-full flex items-center pt-48 md:pt-64"> {/* Added significant top padding */}
+      <div className="relative z-10 h-full flex items-center pt-32 sm:pt-48 md:pt-64">
         <div className="container-custom">
           <div className="max-w-2xl text-white">
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 sm:mb-6"
             >
-              {CONTACT_INFO.company.name}, sua nova vida em <span className="text-[#f7b70f]">Prado-BA</span>
+              {CONTACT_INFO.company.name}, 
+              <span className="text-[#f7b70f] block sm:inline"> sua nova vida em Prado-BA</span>
             </motion.h1>
             
             <motion.p
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-xl md:text-2xl mb-8 text-gray-100"
+              className="text-lg sm:text-xl md:text-2xl mb-6 sm:mb-8 text-gray-100"
             >
               Terrenos a partir de R$15.990 e casas prontas para morar. Localização privilegiada próxima às melhores praias.
             </motion.p>

@@ -57,40 +57,40 @@ export default function Features() {
   });
 
   return (
-    <section id="empreendimento" className="py-20 bg-gray-900 text-white">
-      <div className="container-custom">
-        <h2 className="section-title text-white">
+    <section id="empreendimento" className="py-12 sm:py-16 md:py-20 bg-gray-900 text-white">
+      <div className="container-custom px-4 sm:px-6">
+        <h2 className="section-title text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6">
           Diferenciais do <span className="text-[#0f8a7d]">Empreendimento</span>
         </h2>
-        <p className="section-subtitle text-gray-300">
+        <p className="section-subtitle text-gray-300 text-base sm:text-lg md:text-xl mb-8 sm:mb-12">
           Vila Taipu foi planejado para proporcionar o máximo de conforto, segurança e qualidade de vida para você e sua família.
         </p>
 
-        <div ref={ref} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+        <div ref={ref} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 mt-8 sm:mt-12">
           {features.map((feature, index) => (
             <motion.div
               key={feature.id}
-              className="card p-6 flex flex-col items-center text-center bg-gray-800 border border-gray-700 rounded-lg"
+              className="card p-4 sm:p-6 flex flex-col items-center text-center bg-gray-800 border border-gray-700 rounded-lg"
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <div className="mb-4 p-4 bg-gray-700 rounded-full">
+              <div className="mb-3 sm:mb-4 p-3 sm:p-4 bg-gray-700 rounded-full">
                 {feature.icon}
               </div>
-              <h3 className="text-xl font-bold mb-3 text-white">{feature.title}</h3>
-              <p className="text-gray-300">{feature.description}</p>
+              <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-white">{feature.title}</h3>
+              <p className="text-sm sm:text-base text-gray-300">{feature.description}</p>
             </motion.div>
           ))}
         </div>
 
         <motion.div 
-          className="mt-12 text-center"
+          className="mt-8 sm:mt-12 text-center"
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.5, delay: 0.6 }}
         >
-          <a href="#contato" className="btn-primary">
+          <a href="#contato" className="btn-primary inline-block">
             Quero garantir meu terreno
           </a>
         </motion.div>

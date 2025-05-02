@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { User, Phone, Mail, ArrowRight, X } from "lucide-react";
+import { User, Phone, Mail, ArrowRight, X, Instagram } from "lucide-react";
 import { CONTACT_INFO } from "@/constants/contact";
 
 export default function ContactForm() {
@@ -12,9 +12,10 @@ export default function ContactForm() {
     phone: "",
     email: "",
     interest: "Terreno",
+    message: "",
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
@@ -49,99 +50,161 @@ export default function ContactForm() {
   }
 
   return (
-    <motion.div
-      initial={{ opacity: 0, x: 100 }}
-      animate={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.5 }}
-      className="floating-form md:w-80 lg:w-96"
-    >
-      <div className="flex justify-between items-center mb-4">
-        <h3 className="text-xl font-bold text-[#0f8a7d]">Fale Conosco</h3>
-        <button
-          onClick={() => setIsOpen(false)}
-          className="text-gray-500 hover:text-gray-800"
-        >
-          <X size={20} />
-        </button>
-      </div>
-
-      <p className="text-gray-600 mb-6 text-sm">
-        Preencha o formulário e entraremos em contato com você o mais breve possível.
-      </p>
-
-      <form onSubmit={handleSubmit}>
-        <div className="space-y-4">
-          <div className="relative">
-            <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-gray-400">
-              <User size={16} />
+    <section id="contato" className="relative">
+      <div className="container-custom py-12 sm:py-16 md:py-20">
+        <div className="bg-gray-800 rounded-lg shadow-xl overflow-hidden mx-4 sm:mx-auto max-w-4xl">
+          <div className="grid grid-cols-1 md:grid-cols-2">
+            {/* Contact information */}
+            <div className="bg-[#0f8a7d] p-6 sm:p-8 md:p-10 text-white">
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6">Fale com a gente</h2>
+              <p className="mb-8 text-sm sm:text-base">
+                Estamos prontos para ajudar você a encontrar o terreno ou casa ideal em Prado. Entre em contato conosco!
+              </p>
+              
+              <div className="space-y-4 sm:space-y-6">
+                <div className="flex items-start gap-4">
+                  <div className="bg-[#086b60] p-2 rounded-full mt-1">
+                    <Phone className="w-4 h-4 sm:w-5 sm:h-5" />
+                  </div>
+                  <div>
+                    <p className="font-medium text-sm sm:text-base">Telefone</p>
+                    <a href={`tel:${CONTACT_INFO.phoneLink}`} className="text-white hover:underline text-sm sm:text-base">
+                      {CONTACT_INFO.phoneFormatted}
+                    </a>
+                  </div>
+                </div>
+                
+                <div className="flex items-start gap-4">
+                  <div className="bg-[#086b60] p-2 rounded-full mt-1">
+                    <Mail className="w-4 h-4 sm:w-5 sm:h-5" />
+                  </div>
+                  <div>
+                    <p className="font-medium text-sm sm:text-base">Email</p>
+                    <a href={`mailto:${CONTACT_INFO.email}`} className="text-white hover:underline text-sm sm:text-base">
+                      {CONTACT_INFO.email}
+                    </a>
+                  </div>
+                </div>
+                
+                <div className="flex items-start gap-4">
+                  <div className="bg-[#086b60] p-2 rounded-full mt-1">
+                    <Instagram className="w-4 h-4 sm:w-5 sm:h-5" />
+                  </div>
+                  <div>
+                    <p className="font-medium text-sm sm:text-base">Instagram</p>
+                    <a 
+                      href={CONTACT_INFO.socialMedia?.instagram || "#"}
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="text-white hover:underline text-sm sm:text-base"
+                    >
+                      @imoveisestruturar
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
-            <input
-              type="text"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              placeholder="Seu nome"
-              required
-              className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#0f8a7d] focus:border-transparent"
-            />
-          </div>
-
-          <div className="relative">
-            <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-gray-400">
-              <Phone size={16} />
+            
+            {/* Contact form */}
+            <div className="p-6 sm:p-8 md:p-10 bg-gray-800 text-white">
+              <h3 className="text-xl sm:text-2xl font-bold text-white mb-6">Solicitar informações</h3>
+              
+              <form onSubmit={handleSubmit}>
+                <div className="space-y-4">
+                  <div>
+                    <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-1">
+                      Nome completo
+                    </label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      className="w-full px-3 py-2 sm:py-3 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-[#0f8a7d] bg-gray-700 text-white"
+                      placeholder="Seu nome"
+                      required
+                    />
+                  </div>
+                  
+                  <div>
+                    <label htmlFor="phone" className="block text-sm font-medium text-gray-300 mb-1">
+                      Telefone / WhatsApp
+                    </label>
+                    <input
+                      type="tel"
+                      id="phone"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      className="w-full px-3 py-2 sm:py-3 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-[#0f8a7d] bg-gray-700 text-white"
+                      placeholder="(00) 00000-0000"
+                      required
+                    />
+                  </div>
+                  
+                  <div>
+                    <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-1">
+                      E-mail
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      className="w-full px-3 py-2 sm:py-3 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-[#0f8a7d] bg-gray-700 text-white"
+                      placeholder="seu@email.com"
+                      required
+                    />
+                  </div>
+                  
+                  <div>
+                    <label htmlFor="interest" className="block text-sm font-medium text-gray-300 mb-1">
+                      Interesse
+                    </label>
+                    <select
+                      id="interest"
+                      name="interest"
+                      value={formData.interest}
+                      onChange={handleChange}
+                      className="w-full px-3 py-2 sm:py-3 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-[#0f8a7d] bg-gray-700 text-white"
+                      required
+                    >
+                      <option value="Terreno">Terreno</option>
+                      <option value="Casa">Casa Pronta</option>
+                      <option value="Investimento">Investimento</option>
+                    </select>
+                  </div>
+                  
+                  <div>
+                    <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-1">
+                      Mensagem
+                    </label>
+                    <textarea
+                      id="message"
+                      name="message"
+                      value={formData.message}
+                      onChange={handleChange}
+                      rows={3}
+                      className="w-full px-3 py-2 sm:py-3 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-[#0f8a7d] bg-gray-700 text-white"
+                      placeholder="Como podemos ajudar?"
+                    ></textarea>
+                  </div>
+                </div>
+                
+                <button
+                  type="submit"
+                  className="mt-6 w-full bg-[#0f8a7d] hover:bg-[#086b60] text-white py-2 sm:py-3 px-4 rounded-md transition-colors duration-300 flex items-center justify-center gap-2"
+                >
+                  <span>Enviar mensagem</span>
+                  <ArrowRight size={16} />
+                </button>
+              </form>
             </div>
-            <input
-              type="tel"
-              name="phone"
-              value={formData.phone}
-              onChange={handleChange}
-              placeholder="Seu telefone"
-              required
-              className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#0f8a7d] focus:border-transparent"
-            />
           </div>
-
-          <div className="relative">
-            <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-gray-400">
-              <Mail size={16} />
-            </div>
-            <input
-              type="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              placeholder="Seu email"
-              required
-              className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#0f8a7d] focus:border-transparent"
-            />
-          </div>
-
-          <div>
-            <select
-              name="interest"
-              value={formData.interest}
-              onChange={handleChange}
-              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#0f8a7d] focus:border-transparent"
-            >
-              <option value="Terreno">Terreno</option>
-              <option value="Casa">Casa Pronta</option>
-              <option value="Investimento">Investimento</option>
-            </select>
-          </div>
-
-          <button
-            type="submit"
-            className="w-full btn-primary py-3"
-          >
-            Falar pelo WhatsApp
-          </button>
         </div>
-      </form>
-
-      <p className="text-xs text-gray-500 mt-4 text-center">
-        Ao enviar, você concorda em receber comunicações da Imóveis Estruturar.
-      </p>
-    </motion.div>
+      </div>
+    </section>
   );
 }
-

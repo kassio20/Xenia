@@ -6,22 +6,22 @@ import { Home, Map, TreePine, Sun } from "lucide-react";
 
 const stats = [
   {
-    icon: <Home className="w-8 h-8 text-[var(--primary)]" />,
+    icon: <Home className="w-6 h-6 md:w-8 md:h-8 text-[#0f8a7d]" />,
     value: "400m²",
     label: "Terrenos a partir de",
   },
   {
-    icon: <Map className="w-8 h-8 text-[var(--primary)]" />,
+    icon: <Map className="w-6 h-6 md:w-8 md:h-8 text-[#0f8a7d]" />,
     value: "5min",
     label: "Da praia",
   },
   {
-    icon: <TreePine className="w-8 h-8 text-[var(--primary)]" />,
+    icon: <TreePine className="w-6 h-6 md:w-8 md:h-8 text-[#0f8a7d]" />,
     value: "32mil m²",
     label: "Área verde",
   },
   {
-    icon: <Sun className="w-8 h-8 text-[var(--primary)]" />,
+    icon: <Sun className="w-6 h-6 md:w-8 md:h-8 text-[#0f8a7d]" />,
     value: "100%",
     label: "Infraestrutura",
   },
@@ -29,7 +29,7 @@ const stats = [
 
 export default function Stats() {
   return (
-    <section className="py-16 bg-white">
+    <section className="py-8 sm:py-12 md:py-16 bg-gray-800">
       <motion.div 
         className="container-custom"
         variants={staggerContainer}
@@ -37,16 +37,16 @@ export default function Stats() {
         whileInView="animate"
         viewport={{ once: true }}
       >
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
           {stats.map((stat, index) => (
             <motion.div
               key={index}
-              className="text-center"
+              className="text-center p-3 sm:p-4 bg-gray-700 shadow-sm rounded-lg border border-gray-600"
               variants={fadeInUp}
             >
-              <div className="flex justify-center mb-4">{stat.icon}</div>
-              <div className="text-3xl font-bold text-gray-900 mb-2">{stat.value}</div>
-              <div className="text-gray-600">{stat.label}</div>
+              <div className="flex justify-center mb-2 md:mb-4">{stat.icon}</div>
+              <div className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-1 md:mb-2">{stat.value}</div>
+              <div className="text-xs sm:text-sm md:text-base text-gray-300">{stat.label}</div>
             </motion.div>
           ))}
         </div>
