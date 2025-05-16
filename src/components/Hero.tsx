@@ -77,7 +77,7 @@ export default function Hero() {
         className={`fixed w-full z-50 transition-all duration-300 ${
           isScrolled
             ? "bg-gray-900/90 text-white shadow-md py-3 sm:py-4 backdrop-blur-sm"
-            : "bg-transparent text-white py-6 sm:py-8"
+            : "bg-transparent text-white py-5 sm:py-8"
         }`}
       >
         <div className="container-custom">
@@ -88,8 +88,8 @@ export default function Hero() {
               <div className={`
                 relative bg-transparent p-0 sm:p-2
                 ${isScrolled 
-                  ? "w-full sm:w-64 md:w-auto h-auto aspect-auto sm:aspect-[3/2] sm:h-auto" 
-                  : "w-full sm:w-80 md:w-auto h-auto aspect-auto sm:aspect-[3/2] sm:h-auto"
+                  ? "w-full sm:w-64 md:w-auto h-[100px] sm:h-auto aspect-auto sm:aspect-[3/2]" 
+                  : "w-full sm:w-80 md:w-auto h-[120px] sm:h-auto aspect-auto sm:aspect-[3/2]"
                 }
                 flex items-center justify-center
                 transition-all duration-300
@@ -98,8 +98,8 @@ export default function Hero() {
                 <Image
                   src="/logo-estruturar-new.jpeg"
                   alt="Imóveis Estruturar"
-                  width={isScrolled ? 280 : 320}
-                  height={isScrolled ? 120 : 140}
+                  width={isScrolled ? 260 : 300}
+                  height={isScrolled ? 100 : 120}
                   className="object-contain object-center max-h-full max-w-full"
                   priority
                   style={{ 
@@ -171,7 +171,7 @@ export default function Hero() {
       </header>
 
       {/* Hero content */}
-      <div className="relative z-10 h-full flex items-center pt-32 sm:pt-48 md:pt-64">
+      <div className="relative z-10 h-full flex items-center pt-44 sm:pt-48 md:pt-64">
         <div className="container-custom">
           <div className="max-w-2xl text-white">
             <motion.h1
