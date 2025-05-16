@@ -96,10 +96,10 @@ export default function Hero() {
                 mx-auto md:mx-0
               `}>
                 <Image
-                  src="/logoprincipal1.png"
+                  src="/logo-rodape.png"
                   alt="Imóveis Estruturar"
-                  width={isScrolled ? 220 : 260}
-                  height={isScrolled ? 120 : 146}
+                  width={isScrolled ? 140 : 163}
+                  height={isScrolled ? 80 : 91}
                   className="object-contain object-center max-h-full max-w-full"
                   priority
                   style={{ 
