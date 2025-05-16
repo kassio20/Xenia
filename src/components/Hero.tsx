@@ -77,19 +77,19 @@ export default function Hero() {
         className={`fixed w-full z-50 transition-all duration-300 ${
           isScrolled
             ? "bg-gray-900/90 text-white shadow-md py-3 sm:py-4 backdrop-blur-sm"
-            : "bg-transparent text-white py-5 sm:py-8"
+            : "bg-transparent text-white py-6 sm:py-8"
         }`}
       >
         <div className="container-custom">
           {/* Desktop layout - Logo and navigation */}
           <div className="flex flex-col md:flex-row md:items-center md:justify-between">
             {/* Logo - Now full width on mobile, aligned left on desktop */}
-            <div className="w-full flex justify-center md:justify-start md:w-auto px-2 sm:px-0">
+            <div className="w-full flex justify-center md:justify-start md:w-auto px-0 sm:px-0">
               <div className={`
-                relative ${isScrolled ? "bg-gray-800/50" : "bg-white/10"} backdrop-blur-sm rounded-lg p-1 sm:p-4
+                relative bg-transparent p-0 sm:p-2
                 ${isScrolled 
-                  ? "w-[95%] sm:w-64 md:w-auto h-auto aspect-[16/7] sm:aspect-[3/2] sm:h-auto" 
-                  : "w-full sm:w-80 md:w-auto h-auto aspect-[16/7] sm:aspect-[3/2] sm:h-auto"
+                  ? "w-full sm:w-64 md:w-auto h-auto aspect-auto sm:aspect-[3/2] sm:h-auto" 
+                  : "w-full sm:w-80 md:w-auto h-auto aspect-auto sm:aspect-[3/2] sm:h-auto"
                 }
                 flex items-center justify-center
                 transition-all duration-300
@@ -98,9 +98,9 @@ export default function Hero() {
                 <Image
                   src="/logo-estruturar-new.jpeg"
                   alt="Imóveis Estruturar"
-                  width={isScrolled ? 260 : 300}
-                  height={isScrolled ? 100 : 120}
-                  className="object-contain object-center max-h-full max-w-[92%] sm:max-w-full"
+                  width={isScrolled ? 280 : 320}
+                  height={isScrolled ? 120 : 140}
+                  className="object-contain object-center max-h-full max-w-full"
                   priority
                   style={{ 
                     objectFit: 'contain', 
