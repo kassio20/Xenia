@@ -77,7 +77,7 @@ export default function Home() {
                   <Instagram size={20} />
                 </a>
                 <a 
-                  href="https://wa.me/5573999147925" 
+                  href="https://wa.me/5573998323357" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="text-white hover:text-[#f7b70f] transition-colors bg-green-600 hover:bg-green-700 p-2 rounded-full"
@@ -133,8 +133,8 @@ export default function Home() {
               <ul className="space-y-2 text-sm sm:text-base text-center md:text-left">
                 <li className="flex items-center justify-center md:justify-start gap-2">
                   <Phone size={16} className="text-[#0f8a7d]" />
-                  <a href="tel:+5573999147925" className="text-gray-400 hover:text-white transition-colors">
-                    (73) 99914-7925
+                  <a href="tel:+5573998323357" className="text-gray-400 hover:text-white transition-colors">
+                    (73) 99832-3357
                   </a>
                 </li>
                 <li className="flex items-center justify-center md:justify-start gap-2">
