@@ -1,6 +1,6 @@
 # Imóveis Estruturar - Landing Page
 
-![Imóveis Estruturar](public/logo-estruturar.png)
+![Imóveis Estruturar](public/logo-transparent.png)
 
 Uma landing page moderna e responsiva para Imóveis Estruturar, destacando terrenos e casas em Prado, Bahia.
 
