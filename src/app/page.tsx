@@ -58,10 +58,10 @@ export default function Home() {
             <div className="space-y-4">
               <div className="flex items-center justify-center md:justify-start">
                 <img
-                  src="/logo-rodape.png"
+                  src="/final-version.png"
                   alt="Imóveis Estruturar"
-                  className="h-16 w-auto object-contain"
-                  style={{ maxWidth: "163px", maxHeight: "91px" }}
+                  className="h-20 w-auto object-contain"
+                  style={{ maxWidth: "260px", maxHeight: "146px" }}
                 />
               </div>
               <p className="text-gray-400 text-sm sm:text-base text-center md:text-left">
