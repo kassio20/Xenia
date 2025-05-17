@@ -17,8 +17,8 @@ const stats = [
   },
   {
     icon: <TreePine className="w-6 h-6 md:w-8 md:h-8 text-[#0f8a7d]" />,
-    value: "32mil m²",
-    label: "Área verde",
+    value: "Financiamento próprio facilitado",
+    label: "Sem consulta ao SPC/Serasa",
   },
   {
     icon: <Sun className="w-6 h-6 md:w-8 md:h-8 text-[#0f8a7d]" />,
