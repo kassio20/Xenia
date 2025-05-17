@@ -22,8 +22,8 @@ const stats = [
   },
   {
     icon: <Sun className="w-6 h-6 md:w-8 md:h-8 text-[#0f8a7d]" />,
-    value: "100%",
-    label: "Infraestrutura",
+    value: "Pronto para construir e valorizar",
+    label: "Imóvel com escritura",
   },
 ];
 
