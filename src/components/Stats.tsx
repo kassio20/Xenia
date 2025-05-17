@@ -7,8 +7,8 @@ import { Home, Map, TreePine, Sun } from "lucide-react";
 const stats = [
   {
     icon: <Home className="w-6 h-6 md:w-8 md:h-8 text-[#0f8a7d]" />,
-    value: "400m²",
-    label: "Terrenos a partir de",
+    value: "Lotes a partir de 150m²",
+    label: "Ideais para construir, investir ou ter seu refúgio na praia.",
   },
   {
     icon: <Map className="w-6 h-6 md:w-8 md:h-8 text-[#0f8a7d]" />,
@@ -45,8 +45,8 @@ export default function Stats() {
               variants={fadeInUp}
             >
               <div className="flex justify-center mb-2 md:mb-4">{stat.icon}</div>
-              <div className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-1 md:mb-2">{stat.value}</div>
-              <div className="text-xs sm:text-sm md:text-base text-gray-300">{stat.label}</div>
+              <div className="text-lg sm:text-xl md:text-2xl font-bold text-white mb-1 md:mb-2">{stat.value}</div>
+              <div className="text-xs sm:text-sm md:text-base text-gray-300 px-1">{stat.label}</div>
             </motion.div>
           ))}
         </div>
