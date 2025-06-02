@@ -3,13 +3,13 @@
 @tailwind utilities;
 
 :root {
-  --primary: #0f8a7d;
-  --primary-dark: #086b60;
-  --secondary: #f7b70f;
-  --secondary-dark: #e5a90e;
-  --background: #0f172a; /* Dark background instead of white */
-  --foreground: #f1f5f9; /* Light text for dark background */
-  --accent: #ff6347;
+  --primary: #2E5254;
+  --primary-dark: #323F3B;
+  --secondary: #A08E79;
+  --secondary-dark: #897262;
+  --background: #F1EEE9; /* Beach-inspired light background */
+  --foreground: #5F6C64; /* Sophisticated dark text for light background */
+  --accent: #748C8E;
 }
 
 /* Fix the white stripe issue on mobile */
@@ -122,15 +122,15 @@ section {
 
 /* Fix specific sections with white backgrounds */
 .bg-white {
-  background-color: #1e293b !important; /* Dark background instead of white */
-  color: #f1f5f9 !important;
+  background-color: #F1EEE9 !important; /* Beach-inspired light background */
+  color: #5F6C64 !important;
 }
 
 /* Fix text colors in previously white sections */
 .bg-white .text-gray-900 {
-  color: #f1f5f9 !important;
+  color: #5F6C64 !important;
 }
 
 .bg-white .text-gray-600 {
-  color: #cbd5e1 !important;
+  color: #748C8E !important;
 }
