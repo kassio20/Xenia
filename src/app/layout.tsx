@@ -48,7 +48,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body
-        className={`${inter.variable} ${montserrat.variable} antialiased font-sans bg-white`}
+        className={`${inter.variable} ${montserrat.variable} antialiased font-sans bg-sand text-text-dark`}
       >
         <PageTransition>
           {children}

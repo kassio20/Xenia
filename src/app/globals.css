@@ -2,16 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --primary: #2E5254;
-  --primary-dark: #323F3B;
-  --secondary: #A08E79;
-  --secondary-dark: #897262;
-  --background: #F1EEE9; /* Beach-inspired light background */
-  --foreground: #5F6C64; /* Sophisticated dark text for light background */
-  --accent: #748C8E;
-}
-
 /* Fix the white stripe issue on mobile */
 html, body {
   max-width: 100vw;
@@ -24,8 +14,8 @@ html, body {
 
 body {
   font-family: var(--font-inter), sans-serif;
-  color: var(--foreground);
-  background-color: var(--background);
+  color: theme('colors.text-dark');
+  background-color: theme('colors.bg-sand');
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -65,27 +55,27 @@ h1, h2, h3, h4, h5, h6 {
   }
   
   .btn-primary {
-    @apply bg-[var(--primary)] hover:bg-[var(--primary-dark)] text-white font-semibold py-3 px-6 rounded-md transition-all duration-300 inline-flex items-center justify-center;
+    @apply bg-primary hover:bg-primary-dark text-white font-semibold py-3 px-6 rounded-md transition-all duration-300 inline-flex items-center justify-center;
   }
   
   .btn-secondary {
-    @apply bg-[var(--secondary)] hover:bg-[var(--secondary-dark)] text-white font-semibold py-3 px-6 rounded-md transition-all duration-300 inline-flex items-center justify-center;
+    @apply bg-secondary hover:bg-secondary-dark text-text-dark font-semibold py-3 px-6 rounded-md transition-all duration-300 inline-flex items-center justify-center;
   }
   
   .btn-outline {
-    @apply border-2 border-[var(--primary)] text-[var(--primary)] hover:bg-[var(--primary)] hover:text-white font-semibold py-3 px-6 rounded-md transition-all duration-300 inline-flex items-center justify-center;
+    @apply border-2 border-primary text-primary hover:bg-primary hover:text-white font-semibold py-3 px-6 rounded-md transition-all duration-300 inline-flex items-center justify-center;
   }
   
   .section-title {
-    @apply text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-center;
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-center text-text-dark;
   }
   
   .section-subtitle {
-    @apply text-xl text-gray-300 mb-12 text-center max-w-3xl mx-auto;
+    @apply text-xl text-gray-600 mb-12 text-center max-w-3xl mx-auto;
   }
   
   .card {
-    @apply bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:-translate-y-1 hover:shadow-xl;
+    @apply bg-bg-sand-light rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:-translate-y-1 hover:shadow-xl border border-secondary-dark;
   }
   
   /* Animations */
@@ -102,15 +92,42 @@ h1, h2, h3, h4, h5, h6 {
   
   /* Header and Navigation */
   .nav-link {
-    @apply text-gray-100 hover:text-[var(--primary)] font-medium transition-colors duration-300;
+    @apply text-white hover:text-secondary font-medium transition-colors duration-300;
+  }
+  
+  /* Light theme navigation links - for use on sand backgrounds */
+  .nav-link-light {
+    @apply text-primary hover:text-primary-dark font-medium transition-colors duration-300;
+  }
+  
+  /* Header on light background */
+  .header-light {
+    @apply bg-sand shadow-md;
   }
   
   .floating-form {
-    @apply fixed top-1/2 right-5 -translate-y-1/2 bg-gray-800 text-white z-50 shadow-2xl rounded-lg p-6 max-w-sm;
+    @apply fixed top-1/2 right-5 -translate-y-1/2 bg-primary text-white z-50 shadow-2xl rounded-lg p-6 max-w-sm;
   }
   
   .hero-overlay {
     @apply absolute inset-0 bg-black bg-opacity-50;
+  }
+  
+  /* Footer styling for light theme */
+  .footer-light {
+    @apply bg-primary text-white py-12;
+  }
+  
+  .footer-section {
+    @apply mb-8;
+  }
+  
+  .footer-heading {
+    @apply text-xl font-bold mb-4;
+  }
+  
+  .footer-link {
+    @apply text-gray-200 hover:text-white transition-colors;
   }
 }
 
@@ -120,17 +137,25 @@ section {
   max-width: 100%;
 }
 
-/* Fix specific sections with white backgrounds */
-.bg-white {
-  background-color: #F1EEE9 !important; /* Beach-inspired light background */
-  color: #5F6C64 !important;
+/* Theme backgrounds */
+.bg-white, .bg-gray-100, .bg-gray-200 {
+  background-color: theme('colors.bg-sand') !important;
+  color: theme('colors.text-dark') !important;
 }
 
-/* Fix text colors in previously white sections */
-.bg-white .text-gray-900 {
-  color: #5F6C64 !important;
+/* Use light sand for alternate sections */
+.bg-light {
+  background-color: theme('colors.bg-sand-light') !important;
+  color: theme('colors.text-dark') !important;
 }
 
-.bg-white .text-gray-600 {
-  color: #748C8E !important;
+/* Convert dark backgrounds to appropriate theme colors */
+.bg-dark, .bg-gray-800, .bg-gray-900 {
+  background-color: theme('colors.primary') !important;
+  color: white !important;
+}
+
+/* Form elements in the sand theme */
+.form-input, .form-select, .form-textarea {
+  @apply bg-white border border-secondary-dark text-text-dark focus:ring-primary focus:border-primary rounded-md;
 }

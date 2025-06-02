@@ -40,7 +40,7 @@ export default function Hero() {
         {/* Mobile background image */}
         <div className="block md:hidden">
           <Image 
-            src="/images/praia1.jpeg"
+            src="/images/fundonovo.jpg"
             alt="Praia em Prado, Bahia"
             fill
             quality={90}
@@ -56,7 +56,7 @@ export default function Hero() {
         {/* Desktop background image */}
         <div className="hidden md:block">
           <Image 
-            src="/images/praia1.jpeg"
+            src="/images/fundonovo.jpg"
             alt="Praia em Prado, Bahia"
             fill
             quality={95}
@@ -118,7 +118,7 @@ export default function Hero() {
                   <Link 
                     key={link.name} 
                     href={link.href}
-                    className="nav-link text-white hover:text-[#f7b70f] transition-colors whitespace-nowrap"
+                    className="nav-link text-white hover:text-secondary transition-colors whitespace-nowrap"
                   >
                     {link.name}
                   </Link>
@@ -128,7 +128,7 @@ export default function Hero() {
               {/* Contact button */}
               <a
                 href={`tel:${CONTACT_INFO.phoneLink}`}
-                className="flex items-center gap-2 text-white font-medium hover:text-[#f7b70f] transition-colors whitespace-nowrap"
+                className="flex items-center gap-2 text-white font-medium hover:text-secondary transition-colors whitespace-nowrap"
               >
                 <Phone size={18} /> {CONTACT_INFO.phoneFormatted}
               </a>
@@ -151,7 +151,7 @@ export default function Hero() {
                   <Link
                     key={link.name}
                     href={link.href}
-                    className="text-white hover:text-[#f7b70f] transition-colors py-2 border-b border-gray-800 last:border-b-0"
+                    className="text-white hover:text-secondary transition-colors py-2 border-b border-gray-800 last:border-b-0"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {link.name}
@@ -159,7 +159,7 @@ export default function Hero() {
                 ))}
                 <a
                   href={`tel:${CONTACT_INFO.phoneLink}`}
-                  className="flex items-center gap-2 text-[#f7b70f] font-medium py-2 mt-2"
+                  className="flex items-center gap-2 text-secondary font-medium py-2 mt-2"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   <Phone size={18} /> {CONTACT_INFO.phoneFormatted}
@@ -181,7 +181,7 @@ export default function Hero() {
               className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 sm:mb-6"
             >
               {CONTACT_INFO.company.name}, 
-              <span className="text-[#f7b70f] block sm:inline"> sua nova vida em Prado-BA</span>
+              <span className="text-secondary block sm:inline"> sua nova vida em Prado-BA</span>
             </motion.h1>
             
             <motion.p
@@ -205,7 +205,7 @@ export default function Hero() {
               <CTAButton 
                 href="#galeria" 
                 type="outline" 
-                className="border-white text-white hover:bg-white hover:text-[#0f8a7d] px-8 py-4 text-lg font-semibold"
+                className="border-white text-white hover:bg-white hover:text-primary px-8 py-4 text-lg font-semibold"
               >
                 Ver imóveis
               </CTAButton>
