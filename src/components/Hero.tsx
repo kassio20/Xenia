@@ -96,7 +96,7 @@ export default function Hero() {
                 mx-auto md:mx-0
               `}>
                 <Image
-                  src="/images/fundonovo3.png"
+                  src="/images/logo_transparente.png"
                   alt="Imóveis Estruturar"
                   width={isScrolled ? 260 : 325}
                   height={isScrolled ? 150 : 183}
