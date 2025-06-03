@@ -75,7 +75,7 @@ h1, h2, h3, h4, h5, h6 {
   }
   
   .card {
-    @apply bg-bg-sand-light rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:-translate-y-1 hover:shadow-xl border border-secondary-dark;
+    @apply bg-gradient-to-b from-white via-bg-sand-light to-bg-sand rounded-lg shadow-xl overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl border-2 border-secondary-dark;
   }
   
   /* Animations */
@@ -90,6 +90,28 @@ h1, h2, h3, h4, h5, h6 {
     transform: translateY(0);
   }
   
+  /* Feature icon container styling */
+  .feature-icon-container {
+    @apply bg-gradient-to-br from-secondary/30 to-secondary/50 rounded-full shadow-lg border-2 border-secondary-dark transform transition-all duration-300;
+  }
+  
+  .feature-icon-container:hover {
+    @apply scale-110 shadow-xl animate-pulse;
+  }
+  
+  @keyframes subtle-pulse {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+  }
+  
+  .animate-subtle-pulse {
+    animation: subtle-pulse 2s ease-in-out infinite;
+  }
+  
   /* Header and Navigation */
   .nav-link {
     @apply text-white hover:text-secondary font-medium transition-colors duration-300;
@@ -102,7 +124,7 @@ h1, h2, h3, h4, h5, h6 {
   
   /* Header on light background */
   .header-light {
-    @apply bg-sand shadow-md;
+    @apply bg-bg-sand shadow-md;
   }
   
   .floating-form {

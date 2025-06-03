@@ -19,7 +19,7 @@ const montserrat = Montserrat({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://vilataipu.com.br'),
-  title: "Imóveis Estruturar, sua nova vida em Prado-BA",
+  title: "Imóveis Estruturar, sua nova vida ou empreendimento na praia",
   description: "Conheça o Vila Taipu, um loteamento com terrenos a partir de R$15.990 e casas prontas em Prado, Bahia. Localização privilegiada próxima às melhores praias.",
   keywords: "terrenos, casas, Prado, Bahia, investimento, imóveis, praia, incorporação, loteamento",
   openGraph: {
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     locale: "pt_BR",
     url: "https://vilataipu.com.br",
     siteName: "Imóveis Estruturar - Prado, Bahia",
-    title: "Imóveis Estruturar, sua nova vida em Prado-BA",
+    title: "Imóveis Estruturar, sua nova vida ou empreendimento na praia",
     description: "Conheça o Vila Taipu, um loteamento com terrenos a partir de R$15.990 e casas prontas em Prado, Bahia. Localização privilegiada próxima às melhores praias.",
     images: [
       {

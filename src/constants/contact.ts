@@ -13,7 +13,7 @@ export const CONTACT_INFO = {
   company: {
     name: "Imóveis Estruturar",
     fullName: "Imóveis Estruturar | Prado - BA",
-    slogan: "Imóveis Estruturar, sua nova vida em Prado-BA",
+    slogan: "Imóveis Estruturar, sua nova vida ou empreendimento na praia",
   }
 };
 

@@ -16,37 +16,37 @@ const features = [
     id: 1,
     title: "Terrenos Amplos",
     description: "Lotes a partir de 150m² prontos para construir sua casa dos sonhos em Prado.",
-    icon: <Home className="w-10 h-10 text-primary" />,
+    icon: <Home className="w-12 h-12 text-primary" />,
   },
   {
     id: 2,
     title: "Próximo à Praia",
     description: "Localização privilegiada a poucos minutos das melhores praias de Prado.",
-    icon: <Waves className="w-10 h-10 text-primary" />,
+    icon: <Waves className="w-12 h-12 text-primary" />,
   },
   {
     id: 3,
     title: "Área Verde",
     description: "Empreendimento com ampla área verde e preservação ambiental para seu conforto.",
-    icon: <TreePine className="w-10 h-10 text-primary" />,
+    icon: <TreePine className="w-12 h-12 text-primary" />,
   },
   {
     id: 4,
     title: "Infraestrutura Completa",
     description: "Água encanada, energia elétrica e ruas planejadas com toda a infraestrutura.",
-    icon: <Map className="w-10 h-10 text-primary" />,
+    icon: <Map className="w-12 h-12 text-primary" />,
   },
   {
     id: 5,
     title: "Segurança",
     description: "Controle de acesso e monitoramento para você e sua família viverem com tranquilidade.",
-    icon: <Shield className="w-10 h-10 text-primary" />,
+    icon: <Shield className="w-12 h-12 text-primary" />,
   },
   {
     id: 6,
     title: "Valorização Garantida",
     description: "Investimento em região de alto potencial de valorização imobiliária.",
-    icon: <TrendingUp className="w-10 h-10 text-primary" />,
+    icon: <TrendingUp className="w-12 h-12 text-primary" />,
   },
 ];
 
@@ -57,7 +57,7 @@ export default function Features() {
   });
 
   return (
-    <section id="empreendimento" className="py-12 sm:py-16 md:py-20 bg-sand">
+    <section id="empreendimento" className="py-12 sm:py-16 md:py-20 bg-bg-sand">
       <div className="container-custom px-4 sm:px-6">
         <h2 className="section-title text-text-dark text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6">
           Diferenciais do <span className="text-primary">Empreendimento</span>
@@ -70,12 +70,12 @@ export default function Features() {
           {features.map((feature, index) => (
             <motion.div
               key={feature.id}
-              className="card p-4 sm:p-6 flex flex-col items-center text-center bg-sand-light border border-secondary-dark rounded-lg"
+              className="card p-4 sm:p-6 flex flex-col items-center text-center bg-gradient-to-b from-white via-bg-sand-light to-bg-sand shadow-xl border-2 border-secondary-dark rounded-lg hover:shadow-2xl transition-all duration-300"
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <div className="mb-3 sm:mb-4 p-3 sm:p-4 bg-white rounded-full shadow-sm">
+              <div className="mb-3 sm:mb-4 p-4 sm:p-5 bg-gradient-to-br from-secondary/30 to-secondary/50 rounded-full shadow-lg border-2 border-secondary-dark transform transition-all duration-300 hover:scale-110 hover:shadow-xl hover:rotate-3 feature-icon-container">
                 {feature.icon}
               </div>
               <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-text-dark">{feature.title}</h3>

@@ -40,7 +40,7 @@ export default function Hero() {
         {/* Mobile background image */}
         <div className="block md:hidden">
           <Image 
-            src="/images/fundonovo.jpg"
+            src="/images/fundonovo2.png"
             alt="Praia em Prado, Bahia"
             fill
             quality={90}
@@ -56,7 +56,7 @@ export default function Hero() {
         {/* Desktop background image */}
         <div className="hidden md:block">
           <Image 
-            src="/images/fundonovo.jpg"
+            src="/images/fundonovo2.png"
             alt="Praia em Prado, Bahia"
             fill
             quality={95}
@@ -96,7 +96,7 @@ export default function Hero() {
                 mx-auto md:mx-0
               `}>
                 <Image
-                  src="/final-version.png"
+                  src="/images/logonova.png"
                   alt="Imóveis Estruturar"
                   width={isScrolled ? 260 : 325}
                   height={isScrolled ? 150 : 183}
@@ -181,7 +181,7 @@ export default function Hero() {
               className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 sm:mb-6"
             >
               {CONTACT_INFO.company.name}, 
-              <span className="text-secondary block sm:inline"> sua nova vida em Prado-BA</span>
+              <span className="text-secondary block sm:inline"> sua nova vida ou empreendimento na praia</span>
             </motion.h1>
             
             <motion.p
@@ -190,7 +190,7 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="text-lg sm:text-xl md:text-2xl mb-6 sm:mb-8 text-gray-100"
             >
-              Terrenos com entrada a partir de R$15.990 e casas prontas para morar. Localização privilegiada próxima às melhores praias.
+              Terrenos com entrada a partir de <strong>R$15.990</strong> e casas prontas para morar. Localização privilegiada próxima às melhores praias.
             </motion.p>
             
             <motion.div
