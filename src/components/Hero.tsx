@@ -76,7 +76,7 @@ export default function Hero() {
       <header
         className={`fixed w-full z-50 transition-all duration-300 ${
           isScrolled
-            ? "bg-gray-900/90 text-white shadow-md py-3 sm:py-4 backdrop-blur-sm"
+            ? "bg-primary/90 text-white shadow-md py-3 sm:py-4 backdrop-blur-sm"
             : "bg-transparent text-white py-5 sm:py-8"
         }`}
       >
@@ -180,7 +180,7 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 sm:mb-6"
             >
-              <span className="text-secondary block sm:inline">Sua nova vida ou empreendimento na <span style={{ fontFamily: 'Tex Gyre Termes, serif' }}>praia</span></span>
+              <span className="text-secondary block sm:inline">Sua nova vida ou empreendimento na praia</span>
             </motion.h1>
             
             <motion.p
