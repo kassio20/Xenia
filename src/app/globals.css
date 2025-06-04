@@ -75,7 +75,7 @@ h1, h2, h3, h4, h5, h6 {
   }
   
   .card {
-    @apply bg-gradient-to-b from-white via-bg-sand-light to-bg-sand rounded-lg shadow-xl overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl border-2 border-secondary-dark;
+    @apply bg-white rounded-lg shadow-xl overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl border-2 border-secondary-dark;
   }
   
   /* Animations */

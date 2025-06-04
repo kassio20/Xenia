@@ -63,19 +63,19 @@ export default function Features() {
           Diferenciais do <span className="text-primary">Empreendimento</span>
         </h2>
         <p className="section-subtitle text-gray-600 text-base sm:text-lg md:text-xl mb-8 sm:mb-12">
-          Vila Taipu foi planejado para proporcionar o máximo de conforto, segurança e qualidade de vida para você e sua família.
+          
         </p>
 
         <div ref={ref} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 mt-8 sm:mt-12">
           {features.map((feature, index) => (
             <motion.div
               key={feature.id}
-              className="card p-4 sm:p-6 flex flex-col items-center text-center bg-gradient-to-b from-white via-bg-sand-light to-bg-sand shadow-xl border-2 border-secondary-dark rounded-lg hover:shadow-2xl transition-all duration-300"
+              className="p-6 flex flex-col items-center text-center shadow-xl rounded-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 bg-white text-text-dark border border-gray-200"
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <div className="mb-3 sm:mb-4 p-4 sm:p-5 bg-gradient-to-br from-secondary/30 to-secondary/50 rounded-full shadow-lg border-2 border-secondary-dark transform transition-all duration-300 hover:scale-110 hover:shadow-xl hover:rotate-3 feature-icon-container">
+              <div className="mb-4 p-4 rounded-lg bg-white/50">
                 {feature.icon}
               </div>
               <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-text-dark">{feature.title}</h3>

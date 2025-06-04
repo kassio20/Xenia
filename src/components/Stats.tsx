@@ -6,22 +6,22 @@ import { Home, Map, TreePine, Sun } from "lucide-react";
 
 const stats = [
   {
-    icon: <Home className="w-6 h-6 md:w-8 md:h-8 text-primary" />,
+    icon: <Home className="w-8 h-8 md:w-10 md:h-10 text-primary" />,
     value: "Lotes a partir de 150m²",
     label: "Ideais para construir, investir ou ter seu refúgio na praia.",
   },
   {
-    icon: <Map className="w-6 h-6 md:w-8 md:h-8 text-primary" />,
+    icon: <Map className="w-8 h-8 md:w-10 md:h-10 text-primary" />,
     value: "Entrada a partir de R$ 7 mil",
     label: "Facilidade para começar agora!",
   },
   {
-    icon: <TreePine className="w-6 h-6 md:w-8 md:h-8 text-primary" />,
+    icon: <TreePine className="w-8 h-8 md:w-10 md:h-10 text-primary" />,
     value: "Financiamento próprio facilitado",
     label: "Sem consulta ao SPC/Serasa",
   },
   {
-    icon: <Sun className="w-6 h-6 md:w-8 md:h-8 text-primary" />,
+    icon: <Sun className="w-8 h-8 md:w-10 md:h-10 text-primary" />,
     value: "Pronto para construir e valorizar",
     label: "Imóvel com escritura",
   },
@@ -29,7 +29,7 @@ const stats = [
 
 export default function Stats() {
   return (
-    <section className="py-8 sm:py-12 md:py-16 bg-sand">
+    <section className="py-8 sm:py-12 md:py-16 bg-bg-sand">
       <motion.div 
         className="container-custom"
         variants={staggerContainer}
@@ -41,7 +41,7 @@ export default function Stats() {
           {stats.map((stat, index) => (
             <motion.div
               key={index}
-              className="text-center p-3 sm:p-4 bg-sand-light shadow-sm rounded-lg border border-secondary-dark"
+              className="text-center p-6 bg-white shadow-xl rounded-lg border border-gray-200 hover:shadow-2xl transition-all duration-300 flex flex-col items-center"
               variants={fadeInUp}
             >
               <div className="flex justify-center mb-2 md:mb-4">{stat.icon}</div>
