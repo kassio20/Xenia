@@ -36,32 +36,32 @@ const fadeInUp = {
 const galleryImages: GalleryImage[] = [
   {
     id: 1,
-    src: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 400' fill='%23105459'%3E%3Crect width='800' height='400'/%3E%3C/svg%3E",
+    src: "/images/vista1.jpeg",
     alt: "Vista aérea do empreendimento",
   },
   {
     id: 2,
-    src: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 400' fill='%23F2DEA2'%3E%3Crect width='800' height='400'/%3E%3C/svg%3E",
+    src: "/images/vista2.jpeg",
     alt: "Modelo de casa no condomínio",
   },
   {
     id: 3,
-    src: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 400' fill='%230C3F42'%3E%3Crect width='800' height='400'/%3E%3C/svg%3E",
+    src: "/images/vista3.jpeg",
     alt: "Área de lazer com piscina",
   },
   {
     id: 4,
-    src: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 400' fill='%232A3B3C'%3E%3Crect width='800' height='400'/%3E%3C/svg%3E",
+    src: "/images/vista4.jpeg",
     alt: "Praia próxima ao empreendimento",
   },
   {
     id: 5,
-    src: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 400' fill='%23E0CC90'%3E%3Crect width='800' height='400'/%3E%3C/svg%3E",
+    src: "/images/vista5.jpeg",
     alt: "Vista do pôr do sol em Prado",
   },
   {
     id: 6,
-    src: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 400' fill='%23F7E8BB'%3E%3Crect width='800' height='400'/%3E%3C/svg%3E",
+    src: "/images/vista6.jpeg",
     alt: "Área verde do condomínio",
   },
 ];
