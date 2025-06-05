@@ -58,7 +58,7 @@ export default function Home() {
             <div className="space-y-4">
               <div className="flex items-center justify-center md:justify-start">
                 <img
-                  src="/final-version.png"
+                  src="/images/logonova1.jpeg"
                   alt="Imóveis Estruturar"
                   className="h-20 w-auto object-contain"
                   style={{ maxWidth: "260px", maxHeight: "146px" }}
