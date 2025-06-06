@@ -7,12 +7,12 @@ import { Home, Map, TreePine, Sun } from "lucide-react";
 const stats = [
   {
     icon: <Home className="w-8 h-8 md:w-10 md:h-10 text-primary" />,
-    value: "Lotes a partir de 150m²",
+    value: "Lotes amplos de até 600m²",
     label: "Ideais para construir, investir ou ter seu refúgio na praia.",
   },
   {
     icon: <Map className="w-8 h-8 md:w-10 md:h-10 text-primary" />,
-    value: "Entrada a partir de R$ 7 mil",
+    value: "Lotes a partir de 85 mil",
     label: "Facilidade para começar agora!",
   },
   {

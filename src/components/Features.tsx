@@ -15,7 +15,7 @@ const features = [
   {
     id: 1,
     title: "Terrenos Amplos",
-    description: "Lotes a partir de 150m² prontos para construir sua casa dos sonhos em Prado.",
+    description: "Lotes amplos de até 600m² prontos para construir sua casa dos sonhos em Prado.",
     icon: <Home className="w-12 h-12 text-primary" />,
   },
   {
