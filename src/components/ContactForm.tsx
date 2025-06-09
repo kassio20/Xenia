@@ -9,6 +9,7 @@ export default function ContactForm() {
   const [isOpen, setIsOpen] = useState(true);
   const [formData, setFormData] = useState({
     name: "",
+    countryCode: "+55",
     phone: "",
     email: "",
     interest: "Terreno",
@@ -27,7 +28,8 @@ export default function ContactForm() {
     e.preventDefault();
     
     // Format message for WhatsApp
-    const message = `Olá, sou ${formData.name}. Estou interessado em ${formData.interest} em Prado. Por favor, entre em contato comigo para mais informações.`;
+    const fullPhone = `${formData.countryCode}${formData.phone.replace(/\D/g, '')}`;
+    const message = `Olá, sou ${formData.name}. Estou interessado em ${formData.interest} em Prado. Meu telefone: ${fullPhone}. Por favor, entre em contato comigo para mais informações.`;
     const encodedMessage = encodeURIComponent(message);
     const whatsappUrl = `${CONTACT_INFO.whatsapp}?text=${encodedMessage}`;
     
@@ -131,16 +133,46 @@ export default function ContactForm() {
                     <label htmlFor="phone" className="block text-sm font-medium text-gray-300 mb-1">
                       Telefone / WhatsApp
                     </label>
-                    <input
-                      type="tel"
-                      id="phone"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      className="w-full px-3 py-2 sm:py-3 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-[#0f8a7d] bg-gray-700 text-white"
-                      placeholder="(00) 00000-0000"
-                      required
-                    />
+                    <div className="flex gap-2">
+                      <select
+                        name="countryCode"
+                        value={formData.countryCode}
+                        onChange={handleChange}
+                        className="px-3 py-2 sm:py-3 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-[#0f8a7d] bg-gray-700 text-white w-24"
+                      >
+                        <option value="+55">🇧🇷 +55</option>
+                        <option value="+1">🇺🇸 +1</option>
+                        <option value="+44">🇬🇧 +44</option>
+                        <option value="+33">🇫🇷 +33</option>
+                        <option value="+49">🇩🇪 +49</option>
+                        <option value="+39">🇮🇹 +39</option>
+                        <option value="+34">🇪🇸 +34</option>
+                        <option value="+351">🇵🇹 +351</option>
+                        <option value="+54">🇦🇷 +54</option>
+                        <option value="+56">🇨🇱 +56</option>
+                        <option value="+57">🇨🇴 +57</option>
+                        <option value="+52">🇲🇽 +52</option>
+                        <option value="+81">🇯🇵 +81</option>
+                        <option value="+86">🇨🇳 +86</option>
+                        <option value="+91">🇮🇳 +91</option>
+                        <option value="+61">🇦🇺 +61</option>
+                        <option value="+64">🇳🇿 +64</option>
+                        <option value="+27">🇿🇦 +27</option>
+                      </select>
+                      <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        value={formData.phone}
+                        onChange={handleChange}
+                        className="flex-1 px-3 py-2 sm:py-3 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-[#0f8a7d] bg-gray-700 text-white"
+                        placeholder={formData.countryCode === '+55' ? '(00) 00000-0000' : 'Número do telefone'}
+                        required
+                      />
+                    </div>
+                    <p className="text-xs text-gray-400 mt-1">
+                      Selecione o código do seu país e digite seu número
+                    </p>
                   </div>
                   
                   <div>
